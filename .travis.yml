@@ -1,0 +1,15 @@
+language: rust
+rust:
+- stable
+- beta
+- nightly
+
+before_deploy:
+        - cargo build --release
+deploy:
+  provider: releases
+  api_key:
+    secure: omDzZWJ+ThQCEdYm/BoR1Uws4qK1H7EMN1aeV0E5xt5hI0VcIsYO5fDKZMyExuIp0kxvaCjoANixOb/xtsD8lBwMmW8uugdO3UK5Bhh4oAecKOTWVeAliTrK/8WBbn31Gc3GwGQuwPLTGdjtHRAk2RA/clClRUu/TyYzCNMNNRuD9n4g3Jk1WuyANfgazYHKX9dDO5U6ITvioL8Zq1KzTUSCkqWdiKUc7wwRs6fKVU0B0zZMFosmd9vat6iMyv/ueMiPUMT3Q6IMUVC4KokGDq6cwGznVx2u/z5E/BJB6+Vsr0u1WdGdpVmtPQrbGBhTDY3wiKJQfkMX704QPrYherlkxnvGEb9WzdlGa4jQXGgJsFDeQbcAO1exGxJbQOb+dru+qxTBRCnd0OEnPm7kWO2lvOrNKQJhTBztWBaJ1lvXgnbHBGr4MeQ81UCINnsW4BYMo4j1Eq15r1cItiJwForMuwH/+4RTpy7yKDOx1R8h0mP1/IvasN9thRU7bEgbuGyN6YPrerKARgfD6i5wx1qy2Qe9Q0XnMkMPZAkq6AN3h+BVwJP4n3ffJjvnlPQvjWZFCZvr3AgYiA5BeWz+EttW6AZzhPYRqjkkvA6TgclOD9V6Ev02Acgj5RjY46MrvSfF9zJMJHFrcbDP9zGFs7cUTy23rnuH0BCHsF36RPA=
+  file: target/release/sudoku
+  on:
+    repo: Emerentius/TravisTest
