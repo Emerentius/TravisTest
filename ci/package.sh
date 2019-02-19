@@ -5,5 +5,5 @@ if [[ "$TRAVIS_OS_NAME" == "windows" ]]; then
 	7z a "rudoku-$TRAVIS_TAG-$TRAVIS_OS_NAME-x86_64.zip" rudoku.exe
 else
 	mv target/release/rudoku rudoku
-	zip "rudoku-$TRAVIS_TAG-$TRAVIS_OS_NAME-x86_64.zip" rudoku
+	tar -caf "rudoku-$TRAVIS_TAG-$TRAVIS_OS_NAME-x86_64.tar.gz" rudoku
 fi
